@@ -49,6 +49,7 @@ https://docs.google.com/spreadsheets/d/1Wux5mJaRHXzMy-T0fTCrM69R9ZXvYRW22X5uI7k1
 
 ## 使用予定Gem
 * devise
+* omniauth-twitter
 * Kaminari
 * Active Admin
 * pry-rails
