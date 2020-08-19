@@ -54,7 +54,6 @@ https://docs.google.com/spreadsheets/d/1Wux5mJaRHXzMy-T0fTCrM69R9ZXvYRW22X5uI7k1
 * Active Admin
 * pry-rails
 * better_errors
-* has_secure_password
 
 ## 使用する技術
 - 就業Term
