@@ -1,0 +1,11 @@
+<%= form_with(model: @blog, local: true) do |form| %>
+  <div class="software_name">
+    <%= form.label :software_name %>
+    <%= form.text_field :software_name %>
+  </div>
+  <div class="content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
