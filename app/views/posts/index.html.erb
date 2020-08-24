@@ -1,2 +1,20 @@
-<h1></h1>
-<p></p>
+<% if user_signed_in? %>
+    <%= link_to 'レビュー投稿', new_post_path %>
+<% end %>
+
+<% @posts.each do |post| %>
+    <p>
+        <span class="software_name"><%= post.software_name %></span>
+        <span class="written_by"><%= post.username %></span>
+    </p>
+    <p>
+        <span class="content">
+            <%= post.content %>
+        </span>
+    </p>
+    <p>
+        <% if current_user.id == post.id %>
+            <%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+        <% end %>
+    </p>
+<% end %>

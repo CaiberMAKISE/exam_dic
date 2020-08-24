@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
     @posts = Post.all
@@ -13,8 +14,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    if @post = Post.create(post_params)
-      redirect_to posts_path
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path, notice: "レビューを投稿しました"
     else
       render :new
     end
@@ -25,7 +27,7 @@ class PostsController < ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to posts_path, notice: "レビューを投稿しました"
+      redirect_to posts_path, notice: "レビューを編集しました"
     else
       render :edit
     end
