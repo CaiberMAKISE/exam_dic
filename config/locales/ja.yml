@@ -3,6 +3,7 @@ ja:
     models:
       post: 投稿
       user: ユーザー
+      admin_user: 管理ユーザー
     attributes:
       post:
         software_name: プラグイン名
