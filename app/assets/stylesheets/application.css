@@ -64,7 +64,7 @@ footer {
     padding-top: 10px;
 }
 
-nav {
+.title_bar {
     background-color: darkseagreen;
     height: 70px;
 }
@@ -72,3 +72,39 @@ nav {
 .mainarea {
     padding: 10px 0;
 }
+
+.index_content {
+    white-space: pre-line;
+    width: 720px;
+    display: block;
+    padding-left: 16px;
+    word-wrap:break-word;
+}
+
+.menu {
+    text-align: right;
+    margin-right: 210px;
+    margin-top: 5px;
+}
+
+.post {
+    width: 740px;
+    border: solid 1px;
+    margin-left: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.software_name {
+    width: 460px;
+    display: inline-block;
+}
+
+.written_by {
+    width: 160px;
+    display: inline-block;
+    text-align: right;
+    margin-right: 10px;
+}
+

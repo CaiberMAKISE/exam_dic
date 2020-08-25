@@ -12,7 +12,7 @@
   <body>
     <div class="container">
       <header>
-        <nav>
+        <div class="title_bar">
           <h1 class="logo">SoundsGood</h1>
           <div class="link">
             <% if user_signed_in? %>
@@ -23,7 +23,7 @@
               <%= link_to 'ログイン', new_user_session_path %>
             <% end %>
           </div>
-        </nav>
+        </div>
       </header>
 
       <div class="content">

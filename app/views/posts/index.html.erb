@@ -12,10 +12,8 @@
             </span>
             <%= link_to 'ユーザー詳細', user_path(post.user.id) %>
         </p>
-        <p class="padding">
-            <span class="index_content">
-                <%= post.content %>
-            </span>
+        <p class="index_content">
+            <%= post.content %>
         </p>
     </div>
     <p>
@@ -28,3 +26,5 @@
         <% end %>
     </p>
 <% end %>
+
+<%= paginate @posts %>
