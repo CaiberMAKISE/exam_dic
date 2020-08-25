@@ -1,20 +1,30 @@
+<h2>レビュー一覧</h2>
 <% if user_signed_in? %>
     <%= link_to 'レビュー投稿', new_post_path %>
 <% end %>
 
 <% @posts.each do |post| %>
+    <div class="post">
+        <p>
+            <span class="software_name"><%= post.software_name %></span>
+            <span class="written_by">
+                <%= post.user.username %>
+            </span>
+            <%= link_to 'ユーザー詳細', user_path(post.user.id) %>
+        </p>
+        <p class="padding">
+            <span class="index_content">
+                <%= post.content %>
+            </span>
+        </p>
+    </div>
     <p>
-        <span class="software_name"><%= post.software_name %></span>
-        <span class="written_by"><%= post.username %></span>
-    </p>
-    <p>
-        <span class="content">
-            <%= post.content %>
-        </span>
-    </p>
-    <p>
-        <% if current_user.id == post.id %>
-            <%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '削除してもよろしいですか？' } %>
+        <% if user_signed_in? %>
+            <div class="menu">
+                <% if current_user.id == post.user.id %>
+                    <%= link_to '詳細', post_path(post.id) %>
+                <% end %>
+            </div>
         <% end %>
     </p>
 <% end %>

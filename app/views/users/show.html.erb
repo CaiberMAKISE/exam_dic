@@ -1,2 +1,44 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% if @user.username %>
+    <h1><%= @user.username %>のプロフィール</h1>
+<% else %>
+    <h1>User<%= @user.id %>のプロフィール</h1>
+<% end %>
+<h3>ユーザー名</h3>
+<p>
+    <% if @user.username %>
+        <%= @user.username %>
+    <% else %>
+        User<%= @user.id %>(未設定)
+    <% end %>
+</p>
+
+<% @posts.each do |post| %>
+    <div class="post">
+        <p>
+            <span class="software_name"><%= post.software_name %></span>
+            <span class="written_by">
+                <%= post.user.username %>
+            </span>
+            <%= link_to 'ユーザー詳細', user_path(post.user.id) %>
+        </p>
+        <p class="padding">
+            <span class="index_content">
+                <%= post.content %>
+            </span>
+        </p>
+    </div>
+    <p>
+        <% if user_signed_in? %>
+            <div class="menu">
+                <% if current_user.id == post.user.id %>
+                    <%= link_to '詳細', post_path(post.id) %>
+                <% end %>
+            </div>
+        <% end %>
+    </p>
+<% end %>
+
+<% if @user.id == current_user.id %>
+    <%= link_to 'ユーザー情報変更', edit_user_registration_path %>
+<% end %>
+<%= link_to '一覧へ戻る', posts_path %>

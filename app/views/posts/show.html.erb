@@ -1,2 +1,24 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<h2>レビュー詳細</h2>
+<div class="post">
+    <p>
+        <span class="software_name"><%= @post.software_name %></span>
+        <span class="written_by">
+            <%= @post.user.username %>
+        </span>
+        <%= link_to 'ユーザー詳細', user_path(@post.user.id) %>
+    </p>
+    <p class="padding">
+        <span class="index_content">
+            <%= @post.content %>
+        </span>
+    </p>
+</div>
+<% if user_signed_in? %>
+    <div class="menu">
+        <% if current_user.id == @post.user.id %>
+            <%= link_to '編集', edit_post_path(@post.id) %>
+            <%= link_to '削除', post_path(@post.id), method: :delete ,data: { confirm: '本当に削除していいですか？' } %>
+        <% end %>
+    </div>
+<% end %>
+<%= link_to '一覧へ戻る', posts_path %>

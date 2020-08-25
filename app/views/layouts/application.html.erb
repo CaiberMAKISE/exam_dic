@@ -10,23 +10,36 @@
   </head>
 
   <body>
-    <header>
-      <nav>
-        <% if user_signed_in? %>
-        <strong><%= link_to 'マイページ', users_show_path %></strong>
-        <%= link_to 'プロフィール変更', edit_user_registration_path %>
-        <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to 'サインアップ', new_user_registration_path %>
-        <%= link_to 'ログイン', new_user_session_path %>
-        <% end %>
-      </nav>
-    </header>
+    <div class="container">
+      <header>
+        <nav>
+          <h1 class="logo">SoundsGood</h1>
+          <div class="link">
+            <% if user_signed_in? %>
+              <strong><%= link_to 'マイページ', user_path(current_user.id) %></strong>
+              <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+            <% else %>
+              <%= link_to 'サインアップ', new_user_registration_path %>
+              <%= link_to 'ログイン', new_user_session_path %>
+            <% end %>
+          </div>
+        </nav>
+      </header>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+      <div class="content">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
 
-    <%= yield %>
+        <div class="mainarea">
 
+          <%= yield %>
+
+        </div>
+
+      </div>
+
+      <footer>&copy 2020 CaibeR</footer>
+
+    </div>
   </body>
 </html>

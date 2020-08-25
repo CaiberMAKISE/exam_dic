@@ -10,11 +10,15 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    unless current_user.username
+      redirect_to edit_user_registration_path, notice: "名前を設定してください"
+    else
+      @post = Post.new
+    end
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to posts_path, notice: "レビューを投稿しました"
     else
@@ -43,7 +47,7 @@ class PostsController < ApplicationController
 
   private
   def set_post
-    @blog = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def post_params
