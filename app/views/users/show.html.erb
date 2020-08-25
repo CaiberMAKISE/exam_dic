@@ -38,6 +38,8 @@
     </p>
 <% end %>
 
+<%= paginate @posts %><br>
+
 <% if @user.id == current_user.id %>
     <%= link_to 'ユーザー情報変更', edit_user_registration_path %>
 <% end %>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  PER = 10
   before_action :authenticate_user!
   
   def show
