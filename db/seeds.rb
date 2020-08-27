@@ -15,3 +15,13 @@ AdminUser.create!(email: 'admin@admin.com', password: '7218099', password_confir
     )
     user.save!
 end
+30.times do |n|
+  post = Post.new(
+    software_name: "software#{n + 1}",
+    content: "content#{n + 1}",
+    created_at: "2020-01-01 12:00",
+    updated_at: "2020-01-01 12:00",
+    user_id: 1
+  )
+  post.save!
+end

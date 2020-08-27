@@ -25,6 +25,7 @@ html {
 body {
     text-align: center;
     height: 100%;
+    margin-top: 0;
 }
 
 footer {
@@ -42,8 +43,7 @@ footer {
     height: 100%;
     margin: auto;
     background-color: #FFF;
-    border: solid gray;
-    border-width: 0 1px;
+
 }
 
 .content {
@@ -53,20 +53,23 @@ footer {
 
 .logo {
     font-size: 50px;
-    padding-left: 20px;
+    padding-left: 28px;
     color: #FFF;
-
+    height: 50px;
+    position: absolute;
+    top: -16px;
 }
 
 .link {
     float: right;
     margin-right: 10px;
+    margin-top: 46px;
     padding-top: 10px;
 }
 
 .title_bar {
-    background-color: darkseagreen;
-    height: 70px;
+    background-color: rgb(174, 219, 174);
+    height: 80px;
 }
 
 .mainarea {
@@ -83,14 +86,14 @@ footer {
 
 .menu {
     text-align: right;
-    margin-right: 210px;
+    margin-right: 150px;
     margin-top: 5px;
 }
 
 .post {
     width: 740px;
     border: solid 1px;
-    margin-left: 10px;
+    margin-left: 80px;
     padding: 5px;
     border-radius: 5px;
     margin-top: 10px;
