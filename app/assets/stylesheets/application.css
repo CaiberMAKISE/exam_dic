@@ -33,13 +33,12 @@ footer {
     bottom: 0;
     background-color: gray;
     color: #FFF;
-    width: 980px;
+    width: 100%;
     text-align: center;
 }
 
 .container {
     text-align: left;
-    width: 980px;
     height: 100%;
     margin: auto;
     background-color: #FFF;
@@ -47,8 +46,10 @@ footer {
 }
 
 .content {
+    margin: auto;
     padding: 0 10px;
     padding-bottom: 40px;
+    width: 90%;
 }
 
 .logo {
@@ -78,7 +79,7 @@ footer {
 
 .index_content {
     white-space: pre-line;
-    width: 720px;
+    width: 80%;
     display: block;
     padding-left: 16px;
     word-wrap:break-word;
@@ -86,12 +87,12 @@ footer {
 
 .menu {
     text-align: right;
-    margin-right: 150px;
+    margin-right: 16%;
     margin-top: 5px;
 }
 
 .post {
-    width: 740px;
+    width: 80%;
     border: solid 1px;
     margin-left: 80px;
     padding: 5px;
@@ -100,14 +101,13 @@ footer {
 }
 
 .software_name {
-    width: 460px;
+    width: 65%;
     display: inline-block;
 }
 
 .written_by {
-    width: 160px;
+    width: 25%;
     display: inline-block;
     text-align: right;
     margin-right: 10px;
 }
-
