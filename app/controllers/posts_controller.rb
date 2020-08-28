@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :destroy]
 
   def index
-    @posts = Post.all.page(params[:page]).per(PER)
+    @posts = Post.all.order(updated_at: :desc).page(params[:page]).per(PER)
   end
 
   def show
